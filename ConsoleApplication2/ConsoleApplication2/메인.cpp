@@ -78,12 +78,13 @@ public:
 	Shape(float x, float y);
 	void Draw() const;
 };
+Shape::Shape(){}
 Shape::Shape(float x, float y)
 {
 }
 void Shape::Draw()const
 {
-	cout << "[Shape] position" << "(" << _x << "," << _y << ")";
+	cout << "[Shape] position = (" << _x << "," << _y << ")\n";
 }
 class Rectangle :public Shape
 {
@@ -91,10 +92,31 @@ public:
 	float _width, _height;
 	Rectangle();
 	Rectangle(float x, float y, float w, float h);
+	void Draw() const;
 };
+Rectangle::Rectangle(){}
 Rectangle::Rectangle(float x, float y, float w, float h)
 {
-
+}
+void Rectangle::Draw() const
+{
+	cout << "[Rectangle] position = (" << _x << "," << _y << "), size = (" << _width << "," << _height << ")\n";
+}
+class Circle :public Shape
+{
+public:
+	float _radius;
+	Circle();
+	Circle(float x, float y, float radius);
+	void Draw() const;
+};
+Circle::Circle(){}
+Circle::Circle(float x, float y, float radius)
+{
+}
+void Circle::Draw() const
+{
+	cout << "[Circle] position = (" << _x << "," << _y << "), radius = " << _radius << "\n";
 }
 int main()
 {
@@ -130,5 +152,12 @@ int main()
 	//ac.privateData = 4.5f; // 실패
 	//ac.privateFunc(); // 실패
 	*/
+	Shape a(100, 40);
+	Rectangle b(120, 40, 50, 20);
+	Circle c(200, 100, 50);
+	a.Draw();
+	b.Draw();
+	c.Draw();
+	return 0;
 	return 0;
 }
