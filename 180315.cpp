@@ -74,11 +74,14 @@ class Shape
 {
 public:
 	float _x, _y;
+	Shape();
 	Shape(float x, float y);
 	void Draw() const;
 };
+Shape::Shape() {}
 Shape::Shape(float x, float y)
 {
+	_x = x;_y = y;
 }
 void Shape::Draw()const
 {
@@ -91,8 +94,9 @@ public:
 	Rectangle(float x, float y, float w, float h);
 	void Draw() const;
 };
-Rectangle::Rectangle(float x, float y, float w, float h)
+Rectangle::Rectangle(float x, float y, float w, float h) :Shape(x, y)
 {
+	_width = w;_height = h;
 }
 void Rectangle::Draw() const
 {
@@ -105,8 +109,9 @@ public:
 	Circle(float x, float y, float radius);
 	void Draw() const;
 };
-Circle::Circle(float x, float y, float radius)
+Circle::Circle(float x, float y, float radius) :Shape(x, y)
 {
+	_radius = radius;
 }
 void Circle::Draw() const
 {
