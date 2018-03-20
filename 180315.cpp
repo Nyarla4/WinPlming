@@ -74,11 +74,9 @@ class Shape
 {
 public:
 	float _x, _y;
-	Shape();
 	Shape(float x, float y);
 	void Draw() const;
 };
-Shape::Shape(){}
 Shape::Shape(float x, float y)
 {
 }
@@ -90,11 +88,9 @@ class Rectangle :public Shape
 {
 public:
 	float _width, _height;
-	Rectangle();
 	Rectangle(float x, float y, float w, float h);
 	void Draw() const;
 };
-Rectangle::Rectangle(){}
 Rectangle::Rectangle(float x, float y, float w, float h)
 {
 }
@@ -106,11 +102,9 @@ class Circle :public Shape
 {
 public:
 	float _radius;
-	Circle();
 	Circle(float x, float y, float radius);
 	void Draw() const;
 };
-Circle::Circle(){}
 Circle::Circle(float x, float y, float radius)
 {
 }
