@@ -1,0 +1,18 @@
+복습(180322)
+On--:메시지를 처리하는 함수(메시지 처리기)
+dc:DeviceContext
+GDI:프로그램과 (??)를 분리시키기 위해 존재
+CPaintDC:OnPaint 내에서 사용
+CClientDC:OnPaint 외에서 사용
+dc.(Rectangle or Ellipse)(x1,y1,x2,y2);
+*클래스마법사
+----------------------
+CPoint point:현재 마우스 커서의 위치가 존재
+사용할 때는 point.x, point.y 의 형태로 사용
+
+GetPixel:특정위치해당점 색얻음
+SetPixel:특정위치 원하는색의점을 찍으며 원래 색 리턴
+SetPixelV:특정위치 원하는색의점을 찍음
+ex)
+	COLORREF color = dc.GetPixel (x,y);
+	dc.SetPixelV(x, y, RGB(r, g, b));
